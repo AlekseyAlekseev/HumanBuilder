@@ -1,6 +1,5 @@
 package ru.netology;
 
-
 public class PersonBuilder {
 
     private String name;
@@ -36,4 +35,3 @@ public class PersonBuilder {
         return new Person(name, surname, age, address);
     }
 }
-
