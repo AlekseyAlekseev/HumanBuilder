@@ -7,27 +7,28 @@ public class PersonBuilder {
     private int age = 0;
     private String address = "";
 
+
     public PersonBuilder() {
 
     }
 
     public PersonBuilder setName(String name) {
-        PersonBuilder.this.name = name;
+        this.name = name;
         return this;
     }
 
     public PersonBuilder setSurname(String surname) {
-        PersonBuilder.this.surname = surname;
+        this.surname = surname;
         return this;
     }
 
     public PersonBuilder setAge(int age) {
-        PersonBuilder.this.age = age;
+        this.age = age;
         return this;
     }
 
     public PersonBuilder setAddress(String address) {
-        PersonBuilder.this.address = address;
+        this.address = address;
         return this;
     }
 
