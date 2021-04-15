@@ -5,14 +5,15 @@ public class Main {
         Person mom = new PersonBuilder()
                 .setName("Анна")
                 .setSurname("Вольф")
-                .setAge(31)
                 .setAddress("Сидней")
+                .setAge(31)
                 .build();
         Person son = new PersonBuilder()
                 .setName("Антошка")
                 .build();
 
-        System.out.println(mom + ". Есть сын - " + son);
+        System.out.println("У женщины - " + mom + ". Есть сын - " + son);
+
 
         try {
             // Не хватает обяхательных полей

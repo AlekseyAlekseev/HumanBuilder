@@ -5,8 +5,9 @@ import java.util.Objects;
 public class Person {
     private String name;
     private String surname;
-    private int age = 0;
-    private String address = "";
+    private int age;
+    private String address;
+
 
     public Person(String name, String surname) {
         this.name = name;
@@ -25,6 +26,7 @@ public class Person {
         this.age = age;
         this.address = address;
     }
+
 
     public boolean hasAge() {
         return this.age != 0;
@@ -49,23 +51,27 @@ public class Person {
         return address;
     }
 
-    public String setAddress(String address) {
-        this.address = address;
-        return address;
-    }
-
+//    public String setAddress(String address) {
+//
+//           }
+//
 //    public PersonBuilder newChildBuilder() {
-//         = name;
-//        return this;
+//
 //    }
 //
-//    public void happyBirthday(int age) {
-//        if ()
-//    }
+    public void happyBirthday(Person person) {
+        PersonBuilder personBuilder = new PersonBuilder();
+        if (!hasAge()) {
+            System.out.println("Возраст не известен");
+        } else {
+            age = person.getAge() + 1;
+            personBuilder.setAge(age);
+        }
+    }
 
     @Override
     public String toString() {
-        return "У человека - имя: " + name + ", фамилия: " + surname + ", возраст: " + age + ", город проживания: " + address;
+        return "имя: " + name + ", фамилия: " + surname + ", возраст: " + age + ", город проживания: " + address;
     }
 
 
