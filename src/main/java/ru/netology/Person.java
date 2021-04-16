@@ -55,18 +55,20 @@ public class Person {
 
     public String setAddress(String address) {
         if (!hasAddress()) {
-            personBuilder.setAddress(address);
+            this.address = address;
         } else {
             System.out.println("Город уже указан");
         }
         return address;
     }
 
-    //
-//    public PersonBuilder newChildBuilder() {
-//
-//    }
-//
+
+    public PersonBuilder newChildBuilder() {
+        personBuilder.setSurname(this.surname);
+        personBuilder.setAddress(this.address);
+        return personBuilder;
+    }
+
     public void happyBirthday(Person person) {
         if (!hasAge()) {
             System.out.println("Возраст не известен");

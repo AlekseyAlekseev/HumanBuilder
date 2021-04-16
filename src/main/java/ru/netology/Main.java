@@ -6,7 +6,7 @@ public class Main {
                 .setName("Анна")
                 .setSurname("Вольф")
                 .setAddress("Сидней")
-                .setAge(31)
+                .setAge(35)
                 .build();
         Person son = new PersonBuilder()
                 .setName("Антошка")
@@ -15,18 +15,25 @@ public class Main {
         System.out.println("У женщины - " + mom + ". Есть сын - " + son);
 
 
-//        try {
-//            // Не хватает обяхательных полей
-//            new PersonBuilder().build();
-//        } catch (IllegalStateException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//            System.out.println("Недопустимый возраст для человека");
-//            new PersonBuilder().setAge(-100).build();
-//        } catch (IllegalArgumentException e) {
-//            e.printStackTrace();
-//        }
+        Person son2 = new PersonBuilder()
+                .setName("Ваня")
+                .setAge(10)
+                .build();
+
+        System.out.println(son2);
+
+        try {
+            // Не хватает обяхательных полей
+            new PersonBuilder().build();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("Недопустимый возраст для человека");
+            new PersonBuilder().setAge(-100).build();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
     }
 }
