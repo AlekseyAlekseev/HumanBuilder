@@ -12,6 +12,22 @@ public class PersonBuilder {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
     public PersonBuilder setName(String name) {
         this.name = name;
         return this;
@@ -33,6 +49,11 @@ public class PersonBuilder {
     }
 
     public Person build() {
+        if ( age < 0) {
+            throw new IllegalArgumentException("Указан недопустимый возраст");
+        } else if (name == null || surname == null) {
+            throw new IllegalStateException("Не заполнены обязательные поля");
+        }
         return new Person(name, surname, age, address);
     }
 }

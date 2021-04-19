@@ -8,32 +8,25 @@ public class Main {
                 .setAddress("Сидней")
                 .setAge(35)
                 .build();
-        Person son = new PersonBuilder()
+
+        Person son = mom.newChildBuilder()
                 .setName("Антошка")
+                .setAge(10)
                 .build();
 
         System.out.println("У женщины - " + mom + ". Есть сын - " + son);
 
 
-        Person son2 = new PersonBuilder()
-                .setName("Ваня")
-                .setAge(10)
-                .build();
-
-        System.out.println(son2);
-
         try {
-            // Не хватает обяхательных полей
             new PersonBuilder().build();
         } catch (IllegalStateException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         try {
-            System.out.println("Недопустимый возраст для человека");
             new PersonBuilder().setAge(-100).build();
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

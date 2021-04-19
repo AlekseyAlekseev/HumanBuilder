@@ -4,11 +4,12 @@ package ru.netology;
 import java.util.Objects;
 
 public class Person {
-    private String name;
-    private String surname;
+    private final String name;
+    private final String surname;
     private int age;
     private String address;
     PersonBuilder personBuilder = new PersonBuilder();
+
 
     public Person(String name, String surname) {
         this.name = name;
@@ -62,10 +63,9 @@ public class Person {
         return address;
     }
 
-
     public PersonBuilder newChildBuilder() {
-        personBuilder.setSurname(this.surname);
-        personBuilder.setAddress(this.address);
+        personBuilder.setSurname(this.getSurname());
+        personBuilder.setAddress(this.getAddress());
         return personBuilder;
     }
 
